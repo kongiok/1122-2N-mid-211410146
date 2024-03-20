@@ -1,7 +1,5 @@
 import SingleItem_46 from './SingleItem_46';
-
 import { useQuery } from '@tanstack/react-query';
-
 import { supabase } from './utils/db';
 
 const Items_46 = () => {
@@ -18,14 +16,12 @@ const Items_46 = () => {
     },
   });
   console.log('tasks', data);
-
   if (isLoading) {
     return <p style={{ marginTop: '1rem' }}>Loading...</p>;
   }
   if (error) {
     return <p style={{ marginTop: '1rem' }}>{error.response.data}</p>;
   }
-  
   return (
     <div className='items'>
       {data.map((item) => {
